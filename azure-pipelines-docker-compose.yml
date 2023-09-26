@@ -9,7 +9,7 @@ pool:
 
 variables:
   # Define your ACR details
-  acrName: 'your-acr-name'
+  acrName: 'myacrtelemetry2024images'
   dockerComposeFile: 'docker-compose.yml'
 
 stages:
