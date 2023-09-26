@@ -1,8 +1,8 @@
 trigger:
-  - main # Change this to the branch you want to trigger the pipeline on
+- main # Change this to the branch you want to trigger the pipeline on
 
 pr:
-  - '*'
+- '*'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -13,21 +13,21 @@ variables:
   dockerComposeFile: 'docker-compose.yml'
 
 steps:
-  - script: |
-      # Log in to Azure
-      az login --service-principal --username $(servicePrincipalId) --password $(servicePrincipalPassword) --tenant $(tenantId)
-      
-      # Set the current subscription
-      az account set --subscription $(azureSubscription)
-      
-      # Log in to the Azure Container Registry
-      az acr login --name $(acrName)
-      
-      # Use Docker Compose to build and push images
-      docker-compose -f $(dockerComposeFile) up --build -d
-    displayName: 'Build and Push Docker Images with Docker Compose'
-    env:
-      AZURE_CLI: '2.0.0'
+- script: |
+    # Log in to Azure
+    az login --service-principal --username $(servicePrincipalId) --password $(servicePrincipalPassword) --tenant $(tenantId)
+    
+    # Set the current subscription
+    az account set --subscription $(azureSubscription)
+    
+    # Log in to the Azure Container Registry
+    az acr login --name $(acrName)
+    
+    # Use Docker Compose to build and push images
+    docker-compose -f $(dockerComposeFile) up --build -d
+  displayName: 'Build and Push Docker Images with Docker Compose'
+  env:
+    AZURE_CLI: '2.0.0'
 
 - task: Docker@2
   inputs:
