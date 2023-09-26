@@ -10,8 +10,8 @@ pool:
 variables:
   # Define your ACR details
   acrName: 'myacrtelemetry2024images'
-  dockerImageName: 'moonstar123/custom-otel-collector:latest' # Image name from Docker Hub
-  acrImageName: 'custom-otel-collector:latest' # Name for the image in ACR
+  dockerImageName: 'nginx:latest' # Image name from Docker Hub
+  acrImageName: 'nginx:latest' # Name for the image in ACR
 
 stages:
 - stage: PullAndPush
