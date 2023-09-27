@@ -27,7 +27,7 @@ stages:
 
     - script: |
         # Log in to Azure
-        az login --service-principal --username $(servicePrincipalId) --password $(servicePrincipalPassword) --tenant $(tenantId)
+        az login --service-principal --tenant $(tenantId) --use-device-code --service-connection $(serviceConnectionName)
         
         # Set the current subscription
         az account set --subscription $(azureSubscription)
