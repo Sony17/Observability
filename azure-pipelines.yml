@@ -11,7 +11,7 @@ variables:
   # Define your ACR details
   acrName: 'myacrtelemetry2024images'
   dockerImageName: 'nginx:latest' # Image name from Docker Hub
-  acrImageName: 'nginx:latest' # Name for the image in ACR
+  acrImageName: 'sonynginx:latest' # Name for the image in ACR
 
 stages:
 - stage: PullAndPush
