@@ -16,4 +16,4 @@ stages:
         namespace: 'default'
         command: 'apply'
         useConfigurationFile: true
-        configurationPath: '/deployment.yaml'
+        configurationPath: 'Sony17/Observability/deployment.yaml'
